@@ -1,0 +1,10 @@
+{
+  analytic
+  {
+    Vs.m
+    some.m
+    divtochar.m
+    galois.m
+    gluings.m
+  }
+}
