@@ -6,7 +6,7 @@ This repository contains Magma code for gluing curves along their torsion, both 
 Prerequisites
 --
 
-An installation of Magma and the dependency [`JRSijsling/curve_reconstruction`](https://github.com/JRSijsling/curve_reconstruction). You will need Neurohr's algorithms mentioned in said dependency.
+An installation of Magma and the dependency [`JRSijsling/curve_reconstruction`](https://github.com/JRSijsling/curve_reconstruction).
 
 Installation 
 --
