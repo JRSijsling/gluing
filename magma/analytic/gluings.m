@@ -80,7 +80,7 @@ for i in [1..#Vs] do
     Q := QFromPVFor12(P, Vs[i]);
     tau := SmallPeriodMatrix(Q);
 
-    test, invs := AlgebraizedInvariants(tau, F);
+    invs, _, test := AlgebraizedInvariants(tau, F : Base := true);
     if test then
         vprint Gluing : "";
         if #invs eq 9 then
@@ -134,7 +134,7 @@ while true do
     Q := QFromPVFor12(P, V);
     tau := SmallPeriodMatrix(Q);
 
-    test, invs := AlgebraizedInvariants(tau, F);
+    invs, _, test := AlgebraizedInvariants(tau, F : Base := true);
     if test then
         vprint Gluing : "";
         if #invs eq 9 then
@@ -183,7 +183,7 @@ while true do
     Q := QFromPVFor111(P, V);
     tau := SmallPeriodMatrix(Q);
 
-    test, invs := AlgebraizedInvariants(tau, F);
+    invs, _, test := AlgebraizedInvariants(tau, F : Base := true);
     if test then
         vprint Gluing : "";
         if #invs eq 9 then
