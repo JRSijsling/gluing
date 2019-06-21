@@ -31,4 +31,4 @@ where and `n` is either `1` or `2`. A higher value gives more comments.
 Citing this code
 --
 
-These methods, as well as the upcoming geometric part of this package, are based on the Ph.D. thesis of Jeroen Hanselman at the Universität Ulm, which is work in progress. Please cite this work if this code has been helpful in your research.
+These methods, as well as the upcoming geometric part of this package, are based on the Ph.D. thesis of Jeroen Hanselman at the Universität Ulm, which is work in progress. Please cite this work, and the work in the dependencies, if this code has been helpful in your research.
