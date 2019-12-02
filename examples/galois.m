@@ -6,6 +6,10 @@ R<x> := PolynomialRing(F);
 
 f1 := x^3 + 400;
 f2 := x^5 + 20*x^3 + 36*x;
+
+print "";
+print FactoredGaloisGroup([f1, f2]);
+
 print "";
 print ExistsGaloisStableSubgroup(f1, f2);
 

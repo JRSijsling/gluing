@@ -10,8 +10,8 @@ prec := 500;
 F := RationalsExtra(prec);
 R<x> := PolynomialRing(F);
 
-f1 := x*(x^2 - 6);
-f2 := x*(x + 2)*(x^2 - 2*x - 2)*(x^2 - 6);
+f1 := 4*(x^3 - x^2 - 2*x - 1)+ x^2;
+f2 := x^6 + 3*x^5 + 10*x^3 - 15*x^2 + 15*x - 6;
 
 X1 := HyperellipticCurve(f1);
 X2 := HyperellipticCurve(f2);

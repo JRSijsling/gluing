@@ -67,15 +67,19 @@ if Order(sigma) eq 1 then
 end if;
 
 sigmag := sigma^g;
+/* If we already have a 2-cycle with 1 in it, stop */
 if 1^sigmag ne 1 then
     return sigmag;
 end if;
+/* (3, 4) to (1, 2) */
 if 2^sigmag eq 2 then
     return S4 ! (1,2);
 end if;
+/* (2, 4) to (1, 3) */
 if 3^sigmag eq 3 then
     return S4 ! (1,3);
 end if;
+/* (2, 3) to (1, 4) */
 if 4^sigmag eq 4 then
     return S4 ! (1,4);
 end if;
@@ -429,8 +433,8 @@ f2, h2 := HyperellipticPolynomials(X2);
 g1 := (4*f1 + h1^2) / 4;
 g2 := (4*f2 + h2^2) / 4;
 
-SE1 := X1`se_model;
-SE2 := X2`se_model;
+SE1 := X1`riesrf;
+SE2 := X2`riesrf;
 bps1 := SE1`BranchPoints;
 bps2 := SE2`BranchPoints;
 
@@ -441,16 +445,16 @@ L := NumberFieldExtra(R ! DefiningPolynomial(L));
 /* Make order of roots coincide with those of branch points */
 rts1 := RootsPari(g1, L);
 rts2 := RootsPari(g2, L);
-rts1CC := [ EmbedExtra(rt1, L`iota) : rt1 in rts1 ];
-rts2CC := [ EmbedExtra(rt2, L`iota) : rt2 in rts2 ];
+rts1CC := [ EmbedExtra(rt1) : rt1 in rts1 ];
+rts2CC := [ EmbedExtra(rt2) : rt2 in rts2 ];
 relab1 := RelabelRoots(rts1CC, bps1);
 relab2 := RelabelRoots(rts2CC, bps2);
 rts1 := [ rts1[i] : i in relab1 ];
 rts2 := [ rts2[i] : i in relab2 ];
 
 /* Sanity check
-rts1CC := [ EmbedExtra(rt1, L`iota) : rt1 in rts1 ];
-rts2CC := [ EmbedExtra(rt2, L`iota) : rt2 in rts2 ];
+rts1CC := [ EmbedExtra(rt1) : rt1 in rts1 ];
+rts2CC := [ EmbedExtra(rt2) : rt2 in rts2 ];
 relab1 := RelabelRoots(rts1CC, bps1);
 relab2 := RelabelRoots(rts2CC, bps2);
 print relab1;
@@ -494,9 +498,9 @@ g1 := (4*f1 + h1^2) / 4;
 g2 := (4*f2 + h2^2) / 4;
 g3 := (4*f3 + h3^3) / 4;
 
-SE1 := X1`se_model;
-SE2 := X2`se_model;
-SE3 := X3`se_model;
+SE1 := X1`riesrf;
+SE2 := X2`riesrf;
+SE3 := X3`riesrf;
 bps1 := SE1`BranchPoints;
 bps2 := SE2`BranchPoints;
 bps3 := SE3`BranchPoints;
@@ -509,9 +513,9 @@ L := NumberFieldExtra(R ! DefiningPolynomial(L));
 rts1 := RootsPari(g1, L);
 rts2 := RootsPari(g2, L);
 rts3 := RootsPari(g3, L);
-rts1CC := [ EmbedExtra(rt1, L`iota) : rt1 in rts1 ];
-rts2CC := [ EmbedExtra(rt2, L`iota) : rt2 in rts2 ];
-rts3CC := [ EmbedExtra(rt3, L`iota) : rt3 in rts3 ];
+rts1CC := [ EmbedExtra(rt1) : rt1 in rts1 ];
+rts2CC := [ EmbedExtra(rt2) : rt2 in rts2 ];
+rts3CC := [ EmbedExtra(rt3) : rt3 in rts3 ];
 relab1 := RelabelRoots(rts1CC, bps1);
 relab2 := RelabelRoots(rts2CC, bps2);
 relab3 := RelabelRoots(rts3CC, bps3);
@@ -520,9 +524,9 @@ rts2 := [ rts2[i] : i in relab2 ];
 rts3 := [ rts3[i] : i in relab3 ];
 
 /* Sanity check
-rts1CC := [ EmbedExtra(rt1, L`iota) : rt1 in rts1 ];
-rts2CC := [ EmbedExtra(rt2, L`iota) : rt2 in rts2 ];
-rts3CC := [ EmbedExtra(rt3, L`iota) : rt3 in rts3 ];
+rts1CC := [ EmbedExtra(rt1) : rt1 in rts1 ];
+rts2CC := [ EmbedExtra(rt2) : rt2 in rts2 ];
+rts3CC := [ EmbedExtra(rt3) : rt3 in rts3 ];
 relab1 := RelabelRoots(rts1CC, bps1);
 relab2 := RelabelRoots(rts2CC, bps2);
 relab3 := RelabelRoots(rts3CC, bps3);
