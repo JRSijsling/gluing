@@ -1,5 +1,6 @@
 /***
  *  All relevant isotropic subgroups in the 2-torsion case
+ *  Stored modulo 2, generated on the fly in other characteristics
  *
  *  Written by Jeroen Sijsling (jeroen.sijsling@uni-ulm.de)
  *

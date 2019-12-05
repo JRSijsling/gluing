@@ -12,6 +12,8 @@ import "Vs.m": AllVs2For12, AllVs2For111, GenerateVFor12, GenerateVFor111, LiftF
 
 
 function QFromPVFor12(P, V)
+/* Creates quotient of abelian variety corresponding to P by symplectic
+ * subgroup corresponding to V */
 
 p := Characteristic(BaseRing(V));
 L1 := Lattice(IdentityMatrix(Rationals(), 6));
@@ -38,6 +40,8 @@ end function;
 
 
 function QFromPVFor111(P, V)
+/* Creates quotient of abelian variety corresponding to P by symplectic
+ * subgroup corresponding to V */
 
 p := Characteristic(BaseRing(V));
 L1 := Lattice(IdentityMatrix(Rationals(), 6));
@@ -69,6 +73,7 @@ intrinsic AllGeometric2Gluings(X1::Crv, X2::Crv, F::Fld) -> .
 P1 := PeriodMatrix(X1); P2 := PeriodMatrix(X2);
 P := DiagonalJoin(P1, P2);
 
+/* First find invariants */
 Vs := AllVs2For12();
 invss := [ ];
 for i in [1..#Vs] do
@@ -94,6 +99,7 @@ for i in [1..#Vs] do
 end for;
 invss := [ invs : invs in Set(invss) ];
 
+/* Then find curves */
 Ys := [* *];
 for invs in invss do
     if #invs eq 9 then
@@ -116,7 +122,7 @@ end intrinsic;
 intrinsic SomeGeometricGluing(X1::Crv, X2::Crv, F::Fld, p::RngIntElt : Base := true) -> .
 {Keeps trying to find a single geometric gluing whose invariants are defined over F. For now p is prime.}
 
-/* TODO: For now! */
+/* TODO: For now we impose the following */
 assert Base;
 assert IsPrime(p);
 P1 := PeriodMatrix(X1); P2 := PeriodMatrix(X2);
@@ -165,7 +171,7 @@ end intrinsic;
 intrinsic SomeGeometricGluing(X1::Crv, X2::Crv, X3::Crv, F::Fld, p::RngIntElt : Base := true) -> .
 {Keeps trying to find a single geometric gluing whose invariants are defined over F. For now p is prime.}
 
-/* TODO: For now! */
+/* TODO: For now we impose the following */
 assert Base;
 assert IsPrime(p);
 P1 := PeriodMatrix(X1); P2 := PeriodMatrix(X2); P3 := PeriodMatrix(X3);
@@ -215,7 +221,7 @@ end intrinsic;
 intrinsic AllArithmetic2Gluings(X1::Crv, X2::Crv, F::Fld : Base := true) -> .
 {Returns all gluings over the base field.}
 
-/* TODO: For now! */
+/* TODO: For now we impose the following */
 assert Base;
 P1 := PeriodMatrix(X1); P2 := PeriodMatrix(X2);
 P := DiagonalJoin(P1, P2);
@@ -243,7 +249,7 @@ end intrinsic;
 intrinsic AllArithmetic2Gluings(X1::Crv, X2::Crv, X3::Crv, F::Fld : Base := true) -> .
 {Returns all gluings over the base field.}
 
-/* TODO: For now! */
+/* TODO: For now we impose the following */
 assert Base;
 P1 := PeriodMatrix(X1); P2 := PeriodMatrix(X2); P3 := PeriodMatrix(X3);
 P := DiagonalJoin(P1, P2, P3);
@@ -273,10 +279,10 @@ intrinsic SomeArithmeticGluing(X1::Crv, X2::Crv, F::Fld, p::RngIntElt : Base := 
 // preserving symplectic property yields induced polarization. We consider
 // PPAVs, so this makes sense. Yet what if there is rationality for another
 // polarization?
+
 // Idea for now: construct period matrix and see if that comes from a curve
 // over the base.
 
-/* TODO: For now! */
 assert Base;
 assert IsPrime(p);
 P1 := PeriodMatrix(X1); P2 := PeriodMatrix(X2);
@@ -284,10 +290,6 @@ P := DiagonalJoin(P1, P2);
 
 while true do
     V := GenerateVFor12(p);
-    // TODO: REMOVE
-    //Vs := AllVs2For12();
-    //V := Vs[89];
-
     vprint Gluing : "";
     vprint Gluing : "-----------------------";
     vprint Gluing : "Subgroup:";
@@ -307,7 +309,7 @@ end intrinsic;
 intrinsic SomeArithmeticGluing(X1::Crv, X2::Crv, X3::Crv, F::Fld, p::RngIntElt : Base := true) -> .
 {Keeps trying to find a single gluing over the base field. For now p is prime.}
 
-/* TODO: For now! */
+/* TODO: For now we impose the following */
 assert Base;
 assert IsPrime(p);
 P1 := PeriodMatrix(X1); P2 := PeriodMatrix(X2); P3 := PeriodMatrix(X3);
@@ -315,7 +317,6 @@ P := DiagonalJoin(P1, P2, P3);
 
 while true do
     V := GenerateVFor111(p);
-
     vprint Gluing : "";
     vprint Gluing : "-----------------------";
     vprint Gluing : "Subgroup:";
