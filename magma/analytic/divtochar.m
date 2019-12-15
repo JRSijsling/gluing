@@ -59,6 +59,7 @@ if #bps eq 3 then
 
     /* Conversion to elements of FF2 and creation of map */
     chars := [ V1 ! 0 ] cat [ V1 ! [ Round(2*c) : c in Eltseq(char) ] : char in [ char12, char13, char14 ] ];
+    ss := [ Eltseq(char) : char in chars ]; chars := [ V1 ! (s[((#s div 2) + 1)..(#s)] cat s[1..(#s div 2)]) : s in ss ];
     tupsh := [ < divs[i], chars[i] > : i in [1..4] ];
     tupshinv:= [ < chars[i], divs[i] > : i in [1..4] ];
     h := map< divs -> chars | tupsh >;
@@ -82,6 +83,7 @@ elif #bps eq 4 then
 
     /* Conversion to elements of FF2 and creation of map */
     chars := [ V1 ! 0 ] cat [ V1 ! [ Round(2*c) : c in Eltseq(char) ] : char in [ char12, char13, char14 ] ];
+    ss := [ Eltseq(char) : char in chars ]; chars := [ V1 ! (s[((#s div 2) + 1)..(#s)] cat s[1..(#s div 2)]) : s in ss ];
     tupsh := [ < divs[i], chars[i] > : i in [1..4] ];
     tupshinv:= [ < chars[i], divs[i] > : i in [1..4] ];
     h := map< divs -> chars | tupsh >;
@@ -124,6 +126,7 @@ elif #bps eq 5 then
             Append(~chars, char);
         end for;
     end for;
+    ss := [ Eltseq(char) : char in chars ]; chars := [ V2 ! (s[((#s div 2) + 1)..(#s)] cat s[1..(#s div 2)]) : s in ss ];
 
     /* Conversion to elements of FF2 and creation of map */
     tupsh := [ < divs[i], chars[i] > : i in [1..16] ];
@@ -168,6 +171,7 @@ elif #bps eq 6 then
             Append(~chars, char);
         end for;
     end for;
+    ss := [ Eltseq(char) : char in chars ]; chars := [ V2 ! (s[((#s div 2) + 1)..(#s)] cat s[1..(#s div 2)]) : s in ss ];
 
     /* Conversion to elements of FF2 and creation of map */
     tupsh := [ < divs[i], chars[i] > : i in [1..16] ];
