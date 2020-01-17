@@ -22,7 +22,7 @@ X2 := HyperellipticCurve(f2);
 
 print "";
 print "All arithmetic 2-gluings:";
-Ys := AllArithmetic2Gluings(X1, X2, F);
+Ys := AllArithmetic2GluingsCC(X1, X2, F);
 print Ys;
 
 S<x,y,z> := PolynomialRing(F, 3);

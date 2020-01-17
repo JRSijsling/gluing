@@ -24,7 +24,7 @@ X1 := HyperellipticCurve(f1);
 X2 := HyperellipticCurve(f2);
 X3 := HyperellipticCurve(f3);
 
-Y := SomeGeometricGluing(X1, X2, X3, QQ, 3);
+Y := SomeGeometricGluingCC(X1, X2, X3, QQ, 3);
 print "";
 print Y;
 

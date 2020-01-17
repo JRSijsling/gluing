@@ -16,6 +16,6 @@ f2 := x^6 + 3*x^5 + 10*x^3 - 15*x^2 + 15*x - 6;
 X1 := HyperellipticCurve(f1);
 X2 := HyperellipticCurve(f2);
 
-//Ys := AllGeometric2Gluings(X1, X2, F);
+//Ys := AllGeometric2GluingsCC(X1, X2, F);
 //print Ys;
-print SomeGeometricGluing(X1, X2, F, 2);
+print SomeGeometricGluingCC(X1, X2, F, 2);

@@ -66,7 +66,7 @@ return Q;
 end function;
 
 
-intrinsic AllGeometric2Gluings(X1::Crv, X2::Crv, F::Fld) -> .
+intrinsic AllGeometric2GluingsCC(X1::Crv, X2::Crv, F::Fld) -> .
 {Returns all geometric gluings whose invariants are defined over F.}
 /* TODO: In the hyperelliptic case other methods are available. */
 
@@ -119,7 +119,7 @@ return Ys;
 end intrinsic;
 
 
-intrinsic SomeGeometricGluing(X1::Crv, X2::Crv, F::Fld, p::RngIntElt : Base := true) -> .
+intrinsic SomeGeometricGluingCC(X1::Crv, X2::Crv, F::Fld, p::RngIntElt : Base := true) -> .
 {Keeps trying to find a single geometric gluing whose invariants are defined over F. For now p is prime.}
 
 /* TODO: For now we impose the following */
@@ -168,7 +168,7 @@ end while;
 end intrinsic;
 
 
-intrinsic SomeGeometricGluing(X1::Crv, X2::Crv, X3::Crv, F::Fld, p::RngIntElt : Base := true) -> .
+intrinsic SomeGeometricGluingCC(X1::Crv, X2::Crv, X3::Crv, F::Fld, p::RngIntElt : Base := true) -> .
 {Keeps trying to find a single geometric gluing whose invariants are defined over F. For now p is prime.}
 
 /* TODO: For now we impose the following */
@@ -218,7 +218,7 @@ end intrinsic;
 
 
 
-intrinsic AllArithmetic2Gluings(X1::Crv, X2::Crv, F::Fld : Base := true) -> .
+intrinsic AllArithmetic2GluingsCC(X1::Crv, X2::Crv, F::Fld : Base := true) -> .
 {Returns all gluings over the base field.}
 
 /* TODO: For now we impose the following */
@@ -246,7 +246,7 @@ return Ys, Vs;
 end intrinsic;
 
 
-intrinsic AllArithmetic2Gluings(X1::Crv, X2::Crv, X3::Crv, F::Fld : Base := true) -> .
+intrinsic AllArithmetic2GluingsCC(X1::Crv, X2::Crv, X3::Crv, F::Fld : Base := true) -> .
 {Returns all gluings over the base field.}
 
 /* TODO: For now we impose the following */
@@ -272,7 +272,7 @@ return Ys, Vs;
 end intrinsic;
 
 
-intrinsic SomeArithmeticGluing(X1::Crv, X2::Crv, F::Fld, p::RngIntElt : Base := true) -> .
+intrinsic SomeArithmeticGluingCC(X1::Crv, X2::Crv, F::Fld, p::RngIntElt : Base := true) -> .
 {Keeps trying to find a single gluing over the base field. For now p is prime.}
 // TODO: There are considerable subtleties here. The group is rational iff
 // there is some morphism to another variety defined over the base, and
@@ -306,7 +306,7 @@ end while;
 end intrinsic;
 
 
-intrinsic SomeArithmeticGluing(X1::Crv, X2::Crv, X3::Crv, F::Fld, p::RngIntElt : Base := true) -> .
+intrinsic SomeArithmeticGluingCC(X1::Crv, X2::Crv, X3::Crv, F::Fld, p::RngIntElt : Base := true) -> .
 {Keeps trying to find a single gluing over the base field. For now p is prime.}
 
 /* TODO: For now we impose the following */

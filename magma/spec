@@ -7,4 +7,10 @@
     galois.m
     gluings.m
   }
+  interpolated
+  {
+    arithmetic.m
+    formulae.m
+    routines.m
+  }
 }

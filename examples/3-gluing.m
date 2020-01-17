@@ -16,4 +16,4 @@ f1 := 4*x^3 + 25;
 X1 := HyperellipticCurve(f1);
 X2 := HyperellipticCurve(f2);
 
-print SomeGeometricGluing(X1, X2, F, 3);
+print SomeGeometricGluingCC(X1, X2, F, 3);
