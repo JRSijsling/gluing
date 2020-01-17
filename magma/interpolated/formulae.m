@@ -210,7 +210,7 @@ c2 := (-r3^2 + 2*r3*r4 - r4^2)*a1s*a3s*b1s^2 + (2*r2*r3 - 2*r2*r4 - 2*r3*r4 +
     4*a^2*r3*r4)*b2s*b3s^2 + (-4*a^2*r2^2 + 8*a^2*r2*r3 - 4*a^2*r3^2)*b3s^3;
 c := -discs*c1*c2;
 
-//F3 := Evaluate(F3, [x,z,y]);
+F3 := Evaluate(F3, [x,z,y]);
 return F3, c;
 
 end function;
@@ -441,7 +441,7 @@ c2 := (-b2r^2 + 2*b2r*b3r - b3r^2)*a1s*a3s*b1s^2 + (2*b1r*b2r - 2*b1r*b3r - 2*b2
     8*a^2*b1r*b2r - 4*a^2*b2r^2)*b3s^3;
 c := discs*c1*c2;
 
-//F3 := Evaluate(F3, [x,z,y]);
+F3 := Evaluate(F3, [x,z,y]);
 return F3, c;
 
 end function;
@@ -806,7 +806,7 @@ c2 := a^2*r2^2*s2^2*s3^2 - 2*a^2*r2^2*s2^2*s3*s4 + a^2*r2^2*s2^2*s4^2 -
     r4^2*s3^4*s4^2;
 c := -discs*c1*c2;
 
-//F3 := Evaluate(F3, [x,z,y]);
+F3 := Evaluate(F3, [x,z,y]);
 return F3, c;
 
 end function;
@@ -1227,7 +1227,7 @@ c2 := (-1/4*r3^2 + 1/2*r3*r4 - 1/4*r4^2)*a1s^3*a3s*b1s^2 + (1/2*r2*r3 - 1/2*r2*r
 c := discs*c1*c2;
 c := -c;
 
-//F3 := Evaluate(F3, [x,z,y]);
+F3 := Evaluate(F3, [x,z,y]);
 return F3, c;
 
 end function;
@@ -1818,7 +1818,7 @@ c := (-b2r^3 + 3*b2r^2*b3r - 3*b2r*b3r^2 + b3r^3)*s2^7*s3^3 + (3*b2r^3 - 9*b2r^2
     6*b^2*b1r*b2r*b3r + b^2*b2r^3 + 3*b^2*b2r^2*b3r)*s3^2*s4^4 + (b^2*b1r^3 -
     3*b^2*b1r^2*b2r + 3*b^2*b1r*b2r^2 - b^2*b2r^3)*s3*s4^5;
 
-//F3 := Evaluate(F3, [x,z,y]);
+F3 := Evaluate(F3, [x,z,y]);
 return F3, c;
 
 end function;
@@ -2164,7 +2164,7 @@ c2 := (-1/4*b2r^2 + 1/2*b2r*b3r - 1/4*b3r^2)*a1s^3*a3s*b1s^2 + (1/2*b1r*b2r -
     4*b^2*b2r*b3r)*b2s*b3s^2 + (-4*b^2*b1r^2 + 8*b^2*b1r*b2r - 4*b^2*b2r^2)*b3s^3;
 c := discs*c1*c2;
 
-//F3 := Evaluate(F3, [x,z,y]);
+F3 := Evaluate(F3, [x,z,y]);
 // If d = leading coeff, then maps on differentials, dividing by partials
 // everywhere, are scalar multiples of c / d^2.
 // This is difficult to see in Magma, since it normalizes curve equations, thus

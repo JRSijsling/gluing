@@ -8,8 +8,8 @@ SetVerbose("EndoFind", 1);
 
 import "../magma/interpolated/routines.m": CompatibleRootPairings, CubicResolvent;
 
-//F := FiniteField(1009);
-F := Rationals();
+F := FiniteField(1009);
+//F := Rationals();
 R<x> := PolynomialRing(F);
 
 if Type(F) eq FldRat then

@@ -75,12 +75,12 @@ assert cab eq 1;
 
 gss := CubicResolvent(fss);
 pairs := CompatibleRootPairings(frs, gss);
-if #pairs eq 0 then
-    return [ ];
-end if;
 
 /* Exclude hyperelliptic case */
 pairs := [ pair : pair in pairs | CrossRatio3(pair[1]) ne CrossRatio3(pair[2]) ];
+if #pairs eq 0 then
+    return [ ];
+end if;
 
 L := Parent(pairs[1][1][1]);
 ab :=  [ L ! -Coefficient(fab, 0) ];
@@ -110,6 +110,7 @@ for pair in pairs do
             nunum := GCD([ Integers() ! Numerator(d) : d in Coefficients(F3) ]);
             nu := nunum/nuden;
             F3 /:= nu;
+            F3 *:= Sign(MonomialCoefficient(F3, x^4));
             c /:= nu^2;
         end if;
     end if;
@@ -137,12 +138,12 @@ assert cab eq 1;
 grs := CubicResolvent(frs);
 gss := CubicResolvent(fss);
 pairs := CompatibleRootPairings(grs, gss);
-if #pairs eq 0 then
-    return [ ];
-end if;
 
 /* Exclude hyperelliptic case */
 pairs := [ pair : pair in pairs | CrossRatio3(pair[1]) ne CrossRatio3(pair[2]) ];
+if #pairs eq 0 then
+    return [ ];
+end if;
 
 L := Parent(pairs[1][1][1]);
 ab :=  [ L ! -Coefficient(fab, 0) ];
@@ -174,6 +175,7 @@ for pair in pairs do
             nunum := GCD([ Integers() ! Numerator(d) : d in Coefficients(F3) ]);
             nu := nunum/nuden;
             F3 /:= nu;
+            F3 *:= Sign(MonomialCoefficient(F3, x^4));
             c /:= nu^2;
         end if;
     end if;
@@ -201,12 +203,12 @@ assert cab eq 1;
 grs := frs;
 gss := fss;
 pairs := CompatibleRootPairings(grs, gss);
-if #pairs eq 0 then
-    return [ ];
-end if;
 
 /* Exclude hyperelliptic case */
 pairs := [ pair : pair in pairs | CrossRatio3(pair[1]) ne CrossRatio3(pair[2]) ];
+if #pairs eq 0 then
+    return [ ];
+end if;
 
 L := Parent(pairs[1][1][1]);
 ab :=  [ L ! Coefficient(fab, 1), L ! Coefficient(fab, 0) ];
@@ -234,6 +236,7 @@ for pair in pairs do
             nunum := GCD([ Integers() ! Numerator(d) : d in Coefficients(F3) ]);
             nu := nunum/nuden;
             F3 /:= nu;
+            F3 *:= Sign(MonomialCoefficient(F3, x^4));
             c /:= nu^2;
         end if;
     end if;
@@ -261,12 +264,12 @@ assert cab eq 1;
 grs := frs;
 gss := CubicResolvent(fss);
 pairs := CompatibleRootPairings(grs, gss);
-if #pairs eq 0 then
-    return [ ];
-end if;
 
 /* Exclude hyperelliptic case */
 pairs := [ pair : pair in pairs | CrossRatio3(pair[1]) ne CrossRatio3(pair[2]) ];
+if #pairs eq 0 then
+    return [ ];
+end if;
 
 L := Parent(pairs[1][1][1]);
 ab :=  [ L ! Coefficient(fab, 1), L ! Coefficient(fab, 0) ];
@@ -296,6 +299,7 @@ for pair in pairs do
             nunum := GCD([ Integers() ! Numerator(d) : d in Coefficients(F3) ]);
             nu := nunum/nuden;
             F3 /:= nu;
+            F3 *:= Sign(MonomialCoefficient(F3, x^4));
             c /:= nu^2;
         end if;
     end if;
@@ -323,12 +327,12 @@ assert cab eq 1;
 grs := CubicResolvent(frs);
 gss := fss;
 pairs := CompatibleRootPairings(grs, gss);
-if #pairs eq 0 then
-    return [ ];
-end if;
 
 /* Exclude hyperelliptic case */
 pairs := [ pair : pair in pairs | CrossRatio3(pair[1]) ne CrossRatio3(pair[2]) ];
+if #pairs eq 0 then
+    return [ ];
+end if;
 
 L := Parent(pairs[1][1][1]);
 ab :=  [ L ! Coefficient(fab, 1), L ! Coefficient(fab, 0) ];
@@ -358,6 +362,7 @@ for pair in pairs do
             nunum := GCD([ Integers() ! Numerator(d) : d in Coefficients(F3) ]);
             nu := nunum/nuden;
             F3 /:= nu;
+            F3 *:= Sign(MonomialCoefficient(F3, x^4));
             c /:= nu^2;
         end if;
     end if;
@@ -385,12 +390,12 @@ assert cab eq 1;
 grs := CubicResolvent(frs);
 gss := CubicResolvent(fss);
 pairs := CompatibleRootPairings(grs, gss);
-if #pairs eq 0 then
-    return [ ];
-end if;
 
 /* Exclude hyperelliptic case */
 pairs := [ pair : pair in pairs | CrossRatio3(pair[1]) ne CrossRatio3(pair[2]) ];
+if #pairs eq 0 then
+    return [ ];
+end if;
 
 L := Parent(pairs[1][1][1]);
 ab :=  [ L ! Coefficient(fab, 1), L ! Coefficient(fab, 0) ];
@@ -422,6 +427,7 @@ for pair in pairs do
             nunum := GCD([ Integers() ! Numerator(d) : d in Coefficients(F3) ]);
             nu := nunum/nuden;
             F3 /:= nu;
+            F3 *:= Sign(MonomialCoefficient(F3, x^4));
             c /:= nu^2;
         end if;
     end if;
