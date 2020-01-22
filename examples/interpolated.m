@@ -1,13 +1,5 @@
 /* Arithmetic reconstruction */
 
-SetVerbose("QuarticIso", 1);
-SetVerbose("Reconstruction", 1);
-SetVerbose("Gluing", 1);
-SetVerbose("CurveRec", 1);
-SetVerbose("EndoFind", 1);
-
-import "../magma/interpolated/routines.m": CompatibleRootPairings, CubicResolvent;
-
 F := FiniteField(1009);
 //F := Rationals();
 R<x> := PolynomialRing(F);
