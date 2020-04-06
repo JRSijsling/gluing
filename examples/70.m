@@ -1,4 +1,5 @@
 /* Compute Galois action (very naive, and in general one should use DivToChar) */
+
 SetSeed(1);
 import "../magma/analytic/divtochar.m": DivDif, DivToChar;
 
