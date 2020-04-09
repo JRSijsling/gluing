@@ -236,7 +236,7 @@ F3 := ((b1r^2*b2r - b1r^2*b3r - b1r*b2r^2 + b1r*b3r^2 + b2r^2*b3r - b2r*b3r^2)*b
     b1r*b3r^2 + b2r^2*b3r - b2r*b3r^2)*b2s^2*b3s + (b1r^2*b2r - b1r^2*b3r -
     b1r*b2r^2 + b1r*b3r^2 + b2r^2*b3r - b2r*b3r^2)*b1s*b3s^2 + (-b1r^2*b2r +
     b1r^2*b3r + b1r*b2r^2 - b1r*b3r^2 - b2r^2*b3r + b2r*b3r^2)*b2s*b3s^2)*x^4 +
-((-1/2*b2r^2 + b2r*b3r - 1/2*b3r^2)*a1s^2*a3s*b1s^2 + (b1r*b2r - b1r*b3r - b2r*b3r
+-((-1/2*b2r^2 + b2r*b3r - 1/2*b3r^2)*a1s^2*a3s*b1s^2 + (b1r*b2r - b1r*b3r - b2r*b3r
     + b3r^2)*a1s^2*a3s*b1s*b2s + (-b1r*b2r + b1r*b3r + b2r^2 -
     b2r*b3r)*a3s*b1s^2*b2s + (1/2*b2r^2 - b2r*b3r + 1/2*b3r^2)*a1s*b1s^3*b2s +
     (-1/2*b1r^2 + b1r*b3r - 1/2*b3r^2)*a1s^2*a3s*b2s^2 + (b1r^2 - b1r*b2r -
@@ -269,7 +269,7 @@ F3 := ((b1r^2*b2r - b1r^2*b3r - b1r*b2r^2 + b1r*b3r^2 + b2r^2*b3r - b2r*b3r^2)*b
     (-2*a*b1r^2 + 4*a*b1r*b2r - 2*a*b2r^2)*b1s*b2s*b3s^2 + (2*a*b1r^2 -
     2*a*b1r*b2r - 2*a*b1r*b3r + 2*a*b2r*b3r)*b1s*b3s^3 + (-2*a*b1r*b2r +
     2*a*b1r*b3r + 2*a*b2r^2 - 2*a*b2r*b3r)*b2s*b3s^3)*x^2*y^2 +
-((-2*b2r^2 + 4*b2r*b3r - 2*b3r^2)*a1s*a3s*b1s^2 + (4*b1r*b2r - 4*b1r*b3r -
+-((-2*b2r^2 + 4*b2r*b3r - 2*b3r^2)*a1s*a3s*b1s^2 + (4*b1r*b2r - 4*b1r*b3r -
     4*b2r*b3r + 4*b3r^2)*a1s*a3s*b1s*b2s + (2*b2r^2 - 4*b2r*b3r +
     2*b3r^2)*b1s^3*b2s + (-2*b1r^2 + 4*b1r*b3r - 2*b3r^2)*a1s*a3s*b2s^2 + (2*b1r^2
     - 8*b1r*b2r + 4*b1r*b3r + 2*b2r^2 + 4*b2r*b3r - 4*b3r^2)*b1s^2*b2s^2 +
@@ -296,7 +296,7 @@ F3 := ((b1r^2*b2r - b1r^2*b3r - b1r*b2r^2 + b1r*b3r^2 + b2r^2*b3r - b2r*b3r^2)*b
     2*a*b3r^2)*a1s*b2s^2*b3s + (-4*a*b1r^2 + 8*a*b1r*b2r - 4*a*b2r^2)*a3s*b3s^2 +
     (2*a*b1r^2 - 2*a*b1r*b2r - 2*a*b1r*b3r + 2*a*b2r*b3r)*a1s*b1s*b3s^2 +
     (-2*a*b1r*b2r + 2*a*b1r*b3r + 2*a*b2r^2 - 2*a*b2r*b3r)*a1s*b2s*b3s^2)*x^2*y*z +
-((-2*b2r^2 + 4*b2r*b3r - 2*b3r^2)*a3s*b1s^2 + (4*b1r*b2r - 4*b1r*b3r - 4*b2r*b3r +
+-((-2*b2r^2 + 4*b2r*b3r - 2*b3r^2)*a3s*b1s^2 + (4*b1r*b2r - 4*b1r*b3r - 4*b2r*b3r +
     4*b3r^2)*a3s*b1s*b2s + (-b1r*b2r + b1r*b3r + b2r^2 - b2r*b3r)*a1s*b1s^2*b2s +
     (-2*b1r^2 + 4*b1r*b3r - 2*b3r^2)*a3s*b2s^2 + (b1r^2 - b1r*b2r - b1r*b3r +
     b2r*b3r)*a1s*b1s*b2s^2 + (-4*b1r*b2r + 4*b1r*b3r + 4*b2r^2 -
@@ -831,7 +831,7 @@ F3 := ((r2^2*r3 - r2^2*r4 - r2*r3^2 + r2*r4^2 + r3^2*r4 - r3*r4^2)*b1s^2*b2s + (
     r2^2*r4 - r2*r3^2 + r2*r4^2 + r3^2*r4 - r3*r4^2)*b2s^2*b3s + (r2^2*r3 -
     r2^2*r4 - r2*r3^2 + r2*r4^2 + r3^2*r4 - r3*r4^2)*b1s*b3s^2 + (-r2^2*r3 +
     r2^2*r4 + r2*r3^2 - r2*r4^2 - r3^2*r4 + r3*r4^2)*b2s*b3s^2)*x^4 +
-((-1/4*r3^2 + 1/2*r3*r4 - 1/4*r4^2)*a1s^3*a3s*b1s^2 + (1/2*r2*r3 - 1/2*r2*r4 -
+-((-1/4*r3^2 + 1/2*r3*r4 - 1/4*r4^2)*a1s^3*a3s*b1s^2 + (1/2*r2*r3 - 1/2*r2*r4 -
     1/2*r3*r4 + 1/2*r4^2)*a1s^3*a3s*b1s*b2s + (-r2*r3 + r2*r4 + r3^2 -
     r3*r4)*a1s*a3s*b1s^2*b2s + (1/4*r3^2 - 1/2*r3*r4 + 1/4*r4^2)*a1s^2*b1s^3*b2s +
     (-1/4*r2^2 + 1/2*r2*r4 - 1/4*r4^2)*a1s^3*a3s*b2s^2 + (r2^2 - r2*r3 - r2*r4 +
@@ -890,7 +890,7 @@ F3 := ((r2^2*r3 - r2^2*r4 - r2*r3^2 + r2*r4^2 + r3^2*r4 - r3*r4^2)*b1s^2*b2s + (
     + (-2*b*r2^2 + 4*b*r2*r3 - 2*b*r3^2)*b1s*b2s*b3s^2 + (2*b*r2^2 - 2*b*r2*r3 -
     2*b*r2*r4 + 2*b*r3*r4)*b1s*b3s^3 + (-2*b*r2*r3 + 2*b*r2*r4 + 2*b*r3^2 -
     2*b*r3*r4)*b2s*b3s^3)*x^2*y^2 +
-((-r3^2 + 2*r3*r4 - r4^2)*a1s^2*a3s*b1s^2 + (2*r2*r3 - 2*r2*r4 - 2*r3*r4 +
+-((-r3^2 + 2*r3*r4 - r4^2)*a1s^2*a3s*b1s^2 + (2*r2*r3 - 2*r2*r4 - 2*r3*r4 +
     2*r4^2)*a1s^2*a3s*b1s*b2s + (-2*r2*r3 + 2*r2*r4 + 2*r3^2 -
     2*r3*r4)*a3s*b1s^2*b2s + (r3^2 - 2*r3*r4 + r4^2)*a1s*b1s^3*b2s + (-r2^2 +
     2*r2*r4 - r4^2)*a1s^2*a3s*b2s^2 + (2*r2^2 - 2*r2*r3 - 2*r2*r4 +
@@ -934,7 +934,7 @@ F3 := ((r2^2*r3 - r2^2*r4 - r2*r3^2 + r2*r4^2 + r3^2*r4 - r3*r4^2)*b1s^2*b2s + (
     2*b*r4^2)*a1s*b2s^2*b3s + (-4*b*r2^2 + 8*b*r2*r3 - 4*b*r3^2)*a3s*b3s^2 +
     (2*b*r2^2 - 2*b*r2*r3 - 2*b*r2*r4 + 2*b*r3*r4)*a1s*b1s*b3s^2 + (-2*b*r2*r3 +
     2*b*r2*r4 + 2*b*r3^2 - 2*b*r3*r4)*a1s*b2s*b3s^2)*x^2*y*z +
-((-r3^2 + 2*r3*r4 - r4^2)*a1s*a3s*b1s^2 + (2*r2*r3 - 2*r2*r4 - 2*r3*r4 +
+-((-r3^2 + 2*r3*r4 - r4^2)*a1s*a3s*b1s^2 + (2*r2*r3 - 2*r2*r4 - 2*r3*r4 +
     2*r4^2)*a1s*a3s*b1s*b2s + (-2*r2*r3 + 2*r2*r4 + 2*r3^2 - 2*r3*r4)*b1s^3*b2s +
     (-r2^2 + 2*r2*r4 - r4^2)*a1s*a3s*b2s^2 + (2*r2^2 - 2*r2*r3 - 2*r2*r4 +
     2*r3*r4)*b1s*b2s^3 + (-2*r2*r3 + 2*r2*r4 + 2*r3^2 - 2*r3*r4)*a1s*a3s*b1s*b3s +
@@ -1253,7 +1253,7 @@ F3 := ((b1r^2*b2r - b1r^2*b3r - b1r*b2r^2 + b1r*b3r^2 + b2r^2*b3r - b2r*b3r^2)*s
     b1r*b3r^2 + b2r^2*b3r - b2r*b3r^2)*s2*s4^2 + (b1r^2*b2r - b1r^2*b3r -
     b1r*b2r^2 + b1r*b3r^2 + b2r^2*b3r - b2r*b3r^2)*s3^2*s4 + (-b1r^2*b2r +
     b1r^2*b3r + b1r*b2r^2 - b1r*b3r^2 - b2r^2*b3r + b2r*b3r^2)*s3*s4^2)*x^4 +
-((b2r^2 - 2*b2r*b3r + b3r^2)*s2^4*s3^2 + (-2*b2r^2 + 4*b2r*b3r -
+-((b2r^2 - 2*b2r*b3r + b3r^2)*s2^4*s3^2 + (-2*b2r^2 + 4*b2r*b3r -
     2*b3r^2)*s2^4*s3*s4 + (b2r^2 - 2*b2r*b3r + b3r^2)*s2^4*s4^2 + (-2*b1r*b2r +
     2*b1r*b3r + 2*b2r*b3r - 2*b3r^2)*s2^3*s3^3 + (2*b1r*b2r - 2*b1r*b3r -
     2*b2r*b3r + 2*b3r^2)*s2^3*s3^2*s4 + (-a*b1r*b2r + a*b1r*b3r + a*b2r^2 -
@@ -1288,7 +1288,7 @@ F3 := ((b1r^2*b2r - b1r^2*b3r - b1r*b2r^2 + b1r*b3r^2 + b2r^2*b3r - b2r*b3r^2)*s
     a*b2r*b3r)*s3^2*s4^3 + (2*b*b1r^2 - 2*b*b1r*b2r - 2*b*b1r*b3r +
     2*b*b2r*b3r)*s3^2*s4^2 + (-b*b1r^2 + 2*b*b1r*b3r + b*b2r^2 -
     2*b*b2r*b3r)*s3*s4^3)*x^2*y^2 +
-((2*b1r*b2r - 2*b1r*b3r - 2*b2r^2 + 2*b2r*b3r)*s2^3*s3^2 + (2*b2r^2 - 4*b2r*b3r +
+-((2*b1r*b2r - 2*b1r*b3r - 2*b2r^2 + 2*b2r*b3r)*s2^3*s3^2 + (2*b2r^2 - 4*b2r*b3r +
     2*b3r^2)*s2^3*s3*s4 + (-2*b1r*b2r + 2*b1r*b3r + 2*b2r*b3r - 2*b3r^2)*s2^3*s4^2
     + (-2*b1r^2 + 2*b1r*b2r + 2*b1r*b3r - 2*b2r*b3r)*s2^2*s3^3 + (2*b1r^2 -
     8*b1r*b2r + 4*b1r*b3r + 2*b2r^2 + 4*b2r*b3r - 4*b3r^2)*s2^2*s3^2*s4 +
@@ -1310,7 +1310,7 @@ F3 := ((b1r^2*b2r - b1r^2*b3r - b1r*b2r^2 + b1r*b3r^2 + b2r^2*b3r - b2r*b3r^2)*s
     (-2*a*b2r^2 + 4*a*b2r*b3r - 2*a*b3r^2)*s3^2*s4^2 + (-2*b*b1r*b2r + 2*b*b1r*b3r
     + 2*b*b2r*b3r - 2*b*b3r^2)*s3^2*s4 + (2*b*b1r*b2r - 2*b*b1r*b3r - 2*b*b2r^2 +
     2*b*b2r*b3r)*s3*s4^2)*x^2*y*z +
-((-2*b1r*b2r + 2*b1r*b3r + b2r^2 - b3r^2)*s2^3*s3 + (2*b1r*b2r - 2*b1r*b3r - b2r^2
+-((-2*b1r*b2r + 2*b1r*b3r + b2r^2 - b3r^2)*s2^3*s3 + (2*b1r*b2r - 2*b1r*b3r - b2r^2
     + b3r^2)*s2^3*s4 + (2*b1r*b2r - 2*b1r*b3r - 2*b2r*b3r + 2*b3r^2)*s2^2*s3^2 +
     (-b2r^2 + 2*b2r*b3r - b3r^2)*s2^2*s3*s4 + (-a*b1r*b2r + a*b1r*b3r + a*b2r^2 -
     a*b2r*b3r)*s2^2*s3 + (-2*b1r*b2r + 2*b1r*b3r + 2*b2r^2 - 2*b2r*b3r)*s2^2*s4^2

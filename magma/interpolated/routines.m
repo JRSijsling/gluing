@@ -12,15 +12,15 @@ function CubicResolvent(f4)
 assert IsMonic(f4);
 R := Parent(f4);
 
-a3 := Coefficient(f4, 3);
+a1 := Coefficient(f4, 3);
 a2 := Coefficient(f4, 2);
-a1 := Coefficient(f4, 1);
-a0 := Coefficient(f4, 0);
+a3 := Coefficient(f4, 1);
+a4 := Coefficient(f4, 0);
 
-b2 := -a2;
-b1 := a1*a3 - 4*a0;
-b0 := 4*a0*a2 - a1^2 - a0*a3^2;
-g3 := R ! [ b0, b1, b2, 1 ];
+b1 := -a2;
+b2 := a1*a3 - 4*a4;
+b3 := 4*a4*a2 - a3^2 - a4*a1^2;
+g3 := R ! [ b3, b2, b1, 1 ];
 return g3;
 
 end function;
@@ -48,6 +48,7 @@ end function;
 
 
 function AreCompatibleRoots(rts1, rts2, gens);
+// Tests if Galois action on sets of roots is identical
 // Very naive, and G-sets should be used instead
 
 for gen in gens do
@@ -110,16 +111,19 @@ facs1 := [ fac : fac in facs | Degree(fac) eq 1 ];
 facs2 := [ fac : fac in facs | Degree(fac) eq 2 ];
 
 if Degree(p2) eq 5 then
+    /* Single degree-1 factor */
     for fac in facs1 do
         test := true;
         Append(~deg2facs, fac);
     end for;
 
+    /* Single degree-2 factor */
     for fac in facs2 do
         test := true;
         Append(~deg2facs, fac);
     end for;
 
+    /* Two degree-1 factors */
     CP := CartesianPower(facs1, 2);
     facs12 := [ fac : fac in Set([ tup[1]*tup[2] : tup in CP | tup[1] ne tup[2] ]) ];
     for fac in facs12 do
@@ -128,12 +132,15 @@ if Degree(p2) eq 5 then
     end for;
     return test, deg2facs;
 end if;
+/* Now in degree 6 case */
 
+/* Single degree-2 factor */
 for fac in facs2 do
     test := true;
     Append(~deg2facs, fac);
 end for;
 
+/* Two degree-1 factors */
 CP := CartesianPower(facs1, 2);
 facs12 := [ fac : fac in Set([ tup[1]*tup[2] : tup in CP | tup[1] ne tup[2] ]) ];
 for fac in facs12 do

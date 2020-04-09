@@ -8,6 +8,7 @@
 
 import "formulae.m": GluingFormulaABRs, GluingFormulaAB, GluingFormulaRsSs, GluingFormulaRs, GluingFormulaSs, GluingFormula;
 import "routines.m": CubicResolvent, CompatibleRootPairings, TwistMu, HasDegree2Factor, CrossRatio3;
+import "check.m": CheckG1, CheckG2;
 
 forward ApplyFormulaABRs;
 forward ApplyFormulaAB;
@@ -38,16 +39,21 @@ for fab in fabs do
     fss := f2 div fab;
     if Degree(fab) eq 1 then
         if Degree(frs) eq 3 then
+            //print "ABRs";
             ress cat:= ApplyFormulaABRs(frs, fss, fab : Simplify := Simplify);
         elif Degree(frs) eq 4 then
+            //print "AB";
             ress cat:= ApplyFormulaAB(frs, fss, fab : Simplify := Simplify);
         end if;
     else
         if Degree(frs) eq 3 and Degree(fss) eq 3 then
+            //print "RsSs";
             ress cat:= ApplyFormulaRsSs(frs, fss, fab : Simplify := Simplify);
         elif Degree(frs) eq 3 and Degree(fss) eq 4 then
+            //print "Rs";
             ress cat:= ApplyFormulaRs(frs, fss, fab : Simplify := Simplify);
         elif Degree(frs) eq 4 and Degree(fss) eq 3 then
+            //print "Ss";
             ress cat:= ApplyFormulaSs(frs, fss, fab : Simplify := Simplify);
         elif Degree(frs) eq 4 and Degree(fss) eq 4 then
             ress cat:= ApplyFormula(frs, fss, fab : Simplify := Simplify);
@@ -61,6 +67,8 @@ end intrinsic;
 
 function ApplyFormulaABRs(frs, fss, fab : Simplify := true)
 
+pr := frs;
+ps := fab*fss;
 K := BaseRing(Parent(fab));
 S<x,y,z> := PolynomialRing(K, 3);
 
@@ -114,6 +122,8 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
+    res := [* F3, c *];
+    assert CheckG1(res, pr); assert CheckG2(res, ps);
     Append(~ress, [* F3, c *]);
 end for;
 return ress;
@@ -123,6 +133,8 @@ end function;
 
 function ApplyFormulaAB(frs, fss, fab : Simplify := true)
 
+pr := frs;
+ps := fab*fss;
 K := BaseRing(Parent(fab));
 S<x,y,z> := PolynomialRing(K, 3);
 
@@ -179,6 +191,8 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
+    res := [* F3, c *];
+    assert CheckG1(res, pr); assert CheckG2(res, ps);
     Append(~ress, [* F3, c *]);
 end for;
 return ress;
@@ -188,6 +202,8 @@ end function;
 
 function ApplyFormulaRsSs(frs, fss, fab : Simplify := true)
 
+pr := frs;
+ps := fab*fss;
 K := BaseRing(Parent(fab));
 S<x,y,z> := PolynomialRing(K, 3);
 
@@ -240,6 +256,8 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
+    res := [* F3, c *];
+    assert CheckG1(res, pr); assert CheckG2(res, ps);
     Append(~ress, [* F3, c *]);
 end for;
 return ress;
@@ -249,6 +267,8 @@ end function;
 
 function ApplyFormulaRs(frs, fss, fab : Simplify := true)
 
+pr := frs;
+ps := fab*fss;
 K := BaseRing(Parent(fab));
 S<x,y,z> := PolynomialRing(K, 3);
 
@@ -303,6 +323,8 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
+    res := [* F3, c *];
+    assert CheckG1(res, pr); assert CheckG2(res, ps);
     Append(~ress, [* F3, c *]);
 end for;
 return ress;
@@ -312,6 +334,8 @@ end function;
 
 function ApplyFormulaSs(frs, fss, fab : Simplify := true)
 
+pr := frs;
+ps := fab*fss;
 K := BaseRing(Parent(fab));
 S<x,y,z> := PolynomialRing(K, 3);
 
@@ -366,6 +390,8 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
+    res := [* F3, c *];
+    assert CheckG1(res, pr); assert CheckG2(res, ps);
     Append(~ress, [* F3, c *]);
 end for;
 return ress;
@@ -375,6 +401,8 @@ end function;
 
 function ApplyFormula(frs, fss, fab : Simplify := true)
 
+pr := frs;
+ps := fab*fss;
 K := BaseRing(Parent(fab));
 S<x,y,z> := PolynomialRing(K, 3);
 
@@ -431,6 +459,8 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
+    res := [* F3, c *];
+    assert CheckG1(res, pr); assert CheckG2(res, ps);
     Append(~ress, [* F3, c *]);
 end for;
 return ress;

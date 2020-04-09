@@ -10,6 +10,8 @@
   interpolated
   {
     arithmetic.m
+    binquad.m
+    check.m
     formulae.m
     routines.m
   }
