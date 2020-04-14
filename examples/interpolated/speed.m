@@ -8,7 +8,7 @@ F := Rationals();
 R<x> := PolynomialRing(F);
 
 if Type(F) eq FldRat then
-    D := [-150..150];
+    D := [-10^12..10^12];
 else
     D := F;
 end if;

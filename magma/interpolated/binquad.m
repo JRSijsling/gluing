@@ -18,7 +18,11 @@ c0 := Coefficient(bq, 0);
 I := 12*c4*c0 - 3*c3*c1 + c2^2;
 J := 72*c4*c2*c0 + 9*c3*c2*c1 - 27*c4*c1^2 - 27*c0*c3^2 - 2*c2^3;
 Delta := 4*I^3 - J^2;
-j := 6912*I^3/Delta;
+if Delta eq 0 then
+    j := Infinity();
+else
+    j := 6912*I^3/Delta;
+end if;
 return j, [I,J], Delta;
 
 end intrinsic;

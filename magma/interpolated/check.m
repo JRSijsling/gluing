@@ -33,6 +33,24 @@ C := f040*t^4 + f031*t^3 + f022*t^2 + f013*t + f004;
 p := B^2 - 4*A*C;
 p0 := pr;
 
+/* TODO: Cheat in characteristic 3 for now because invariants in genus 1 are more complicated */
+if Characteristic(BaseRing(S)) eq 3 then
+    if p eq 0 then
+        return false;
+    end if;
+    if Discriminant(p) ne 0 then
+        X := HyperellipticCurve(p);
+        P := Random(Points(X));
+        E := EllipticCurve(X, P);
+        X0 := HyperellipticCurve(p0);
+        P0 := Random(Points(X0));
+        E0 := EllipticCurve(X0, P0);
+        return IsIsomorphic(E, E0);
+    else
+        return false;
+    end if;
+end if;
+
 j, IJ := BinaryQuarticInvariants(p);
 j0, IJ0 := BinaryQuarticInvariants(p0);
 I, J := Explode(IJ);
@@ -79,6 +97,7 @@ a4 := Coefficient(fg, 0);
 
 res := CubicResolvent(fg);
 rts := [ tup[1] : tup in Roots(res) ];
+//print #rts;
 
 test := false;
 for b in rts do
@@ -86,6 +105,7 @@ for b in rts do
         2*h2*h1*a3*b - 2*h2*h0*a1*a3 - 4*h1^2*a4 + 4*h2*h0*a2*b + (-4*h2*h0 +
         h1^2)*b^2 + 4*h1*h0*a3 - 2*h1*h0*a1*b + h0^2*a1^2 - 4*h0^2*a2 +
         4*h0^2*b;
+    if den eq 0 then continue; end if;
 
     num0 := -h2*k^2*a3^4 + 8*h2*k^2*a2*a3^2*a4 - 16*h2*k^2*a2^2*a4^2 -
         8*h2*k^2*a3^2*a4*b + 32*h2*k^2*a2*a4^2*b - 16*h2*k^2*a4^2*b^2 -
@@ -220,6 +240,9 @@ for b in rts do
 
     p1 := (num6*t^6 + num5*t^5 + num4*t^4 + num3*t^3 + num2*t^2 + num1*t + num0)/den;
     p1 := R ! (t^6*Evaluate(p1, -1/t));
+    //print p1;
+    //print ps;
+    //print c;
     //print (p1*f400^2)/ (4*c*ps);
     test or:= (p1*f400^2 eq 4*c*ps);
 end for;

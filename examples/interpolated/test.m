@@ -1,6 +1,6 @@
 /* Arithmetic reconstruction */
 
-F := FiniteField(1009);
+F := FiniteField(3);
 //F := Rationals();
 R<x> := PolynomialRing(F);
 
@@ -12,8 +12,10 @@ end if;
 
 while true do
     repeat
-        f1 := 2*(x^4 + &+[ Random(D)*x^i : i in [0..3] ]);
-        f2 := 3*(x^6 + &+[ Random(D)*x^i : i in [0..5] ]);
+        repeat c1 := Random(D); until c1 ne 0;
+        repeat c2 := Random(D); until c2 ne 0;
+        f1 := c1*(x^4 + &+[ Random(D)*x^i : i in [0..3] ]);
+        f2 := c2*(x^6 + &+[ Random(D)*x^i : i in [0..5] ]);
 
         //f1 := 4*x^3 + 5*x^2 - 98*x + 157;
         //f2 := x^6 + 2*x^3 - 4*x^2 + 1;

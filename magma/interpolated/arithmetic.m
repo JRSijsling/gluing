@@ -101,6 +101,8 @@ for pair in pairs do
     invss := [ a1s, a3s ] cat pair[2];
     F3, c := GluingFormulaABRs(rs, invss, ab);
     F3 := S ! F3; c := K ! c;
+    Z := Curve(ProjectiveSpace(S), F3);
+    if IsIrreducible(F3) then if Genus(Z) ne 3 then continue; end if; end if;
 
     /* Twist to correct for leading coefficients */
     F3 := S ! TwistMu(F3, mu);
@@ -123,8 +125,11 @@ for pair in pairs do
         end if;
     end if;
     res := [* F3, c *];
-    assert CheckG1(res, pr); assert CheckG2(res, ps);
-    Append(~ress, [* F3, c *]);
+
+    test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
+    if test1 and test2 then
+        Append(~ress, [* F3, c *]);
+    end if;
 end for;
 return ress;
 
@@ -170,6 +175,8 @@ for pair in pairs do
     invss := [ a1s, a3s ] cat pair[2];
     F3, c := GluingFormulaAB(invrs, invss, ab);
     F3 := S ! F3; c := K ! c;
+    Z := Curve(ProjectiveSpace(S), F3);
+    if IsIrreducible(F3) then if Genus(Z) ne 3 then continue; end if; end if;
 
     /* Twist to correct for leading coefficients */
     F3 := S ! TwistMu(F3, mu);
@@ -192,8 +199,11 @@ for pair in pairs do
         end if;
     end if;
     res := [* F3, c *];
-    assert CheckG1(res, pr); assert CheckG2(res, ps);
-    Append(~ress, [* F3, c *]);
+
+    test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
+    if test1 and test2 then
+        Append(~ress, [* F3, c *]);
+    end if;
 end for;
 return ress;
 
@@ -235,6 +245,8 @@ for pair in pairs do
     ss := pair[2];
     F3, c := GluingFormulaRsSs(rs, ss, ab);
     F3 := S ! F3; c := K ! c;
+    Z := Curve(ProjectiveSpace(S), F3);
+    if IsIrreducible(F3) then if Genus(Z) ne 3 then continue; end if; end if;
 
     /* Twist to correct for leading coefficients */
     F3 := S ! TwistMu(F3, mu);
@@ -257,8 +269,11 @@ for pair in pairs do
         end if;
     end if;
     res := [* F3, c *];
-    assert CheckG1(res, pr); assert CheckG2(res, ps);
-    Append(~ress, [* F3, c *]);
+
+    test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
+    if test1 and test2 then
+        Append(~ress, [* F3, c *]);
+    end if;
 end for;
 return ress;
 
@@ -302,6 +317,8 @@ for pair in pairs do
     invss := [ a1s, a3s ] cat pair[2];
     F3, c := GluingFormulaRs(rs, invss, ab);
     F3 := S ! F3; c := K ! c;
+    Z := Curve(ProjectiveSpace(S), F3);
+    if IsIrreducible(F3) then if Genus(Z) ne 3 then continue; end if; end if;
 
     /* Twist to correct for leading coefficients */
     F3 := S ! TwistMu(F3, mu);
@@ -324,8 +341,11 @@ for pair in pairs do
         end if;
     end if;
     res := [* F3, c *];
-    assert CheckG1(res, pr); assert CheckG2(res, ps);
-    Append(~ress, [* F3, c *]);
+
+    test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
+    if test1 and test2 then
+        Append(~ress, [* F3, c *]);
+    end if;
 end for;
 return ress;
 
@@ -369,6 +389,8 @@ for pair in pairs do
     ss := pair[2];
     F3, c := GluingFormulaSs(invrs, ss, ab);
     F3 := S ! F3; c := K ! c;
+    Z := Curve(ProjectiveSpace(S), F3);
+    if IsIrreducible(F3) then if Genus(Z) ne 3 then continue; end if; end if;
 
     /* Twist to correct for leading coefficients */
     F3 := S ! TwistMu(F3, mu);
@@ -391,8 +413,11 @@ for pair in pairs do
         end if;
     end if;
     res := [* F3, c *];
-    assert CheckG1(res, pr); assert CheckG2(res, ps);
-    Append(~ress, [* F3, c *]);
+
+    test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
+    if test1 and test2 then
+        Append(~ress, [* F3, c *]);
+    end if;
 end for;
 return ress;
 
@@ -438,6 +463,8 @@ for pair in pairs do
     invss := [ a1s, a3s ] cat pair[2];
     F3, c := GluingFormula(invrs, invss, ab);
     F3 := S ! F3; c := K ! c;
+    Z := Curve(ProjectiveSpace(S), F3);
+    if IsIrreducible(F3) then if Genus(Z) ne 3 then continue; end if; end if;
 
     /* Twist to correct for leading coefficients */
     F3 := S ! TwistMu(F3, mu);
@@ -460,8 +487,11 @@ for pair in pairs do
         end if;
     end if;
     res := [* F3, c *];
-    assert CheckG1(res, pr); assert CheckG2(res, ps);
-    Append(~ress, [* F3, c *]);
+
+    test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
+    if test1 and test2 then
+        Append(~ress, [* F3, c *]);
+    end if;
 end for;
 return ress;
 
