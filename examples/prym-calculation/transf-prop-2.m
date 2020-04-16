@@ -28,11 +28,6 @@ c := c1*z^2 + 2*c2*y*z + c3*y^2;
 
 p0 := Determinant(A)^2*b*(b^2 - a*c);
 
-/*
-h := Evaluate(h, [y + la*z, z]);
-g := Evaluate(g, [y + la*z, z]);
-f := Evaluate(f, [y + la*z, z]);
-*/
 ev1 := [a11*y + a12*z, a21*y + a22*z];
 h := Evaluate(h, ev1);
 g := Evaluate(g, ev1);
