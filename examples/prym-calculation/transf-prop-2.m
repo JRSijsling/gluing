@@ -2,14 +2,14 @@
 
 SetVerbose("EndoCheck", 0);
 
-F<a11,a12,a21,a22> := RationalFunctionField(Rationals(), 4);
-K<g2,g1,g0,h2,h1,h0> := RationalFunctionField(F, 6);
+F<la> := RationalFunctionField(Rationals());
+K<f2,f1,f0,g2,g1,g0,h2,h1,h0> := RationalFunctionField(F, 9);
 S<y,z> := PolynomialRing(K, 2);
 R<t> := PolynomialRing(K);
 
 h := h2*y^2 + h1*y*z + h0*z^2;
 g := g2*y^2 + g1*y*z + g0*z^2;
-f := y*z;
+f := f2*y^2 + f1*y*z + f0*z^2;
 
 h2 := MonomialCoefficient(h, y^2); h1 := MonomialCoefficient(h, y*z); h0 := MonomialCoefficient(h, z^2);
 g2 := MonomialCoefficient(g, y^2); g1 := MonomialCoefficient(g, y*z); g0 := MonomialCoefficient(g, z^2);
@@ -28,10 +28,8 @@ c := c1*z^2 + 2*c2*y*z + c3*y^2;
 
 p0 := Determinant(A)^2*b*(b^2 - a*c);
 
-ev1 := [a11*y + a12*z, a21*y + a22*z];
-h := Evaluate(h, ev1);
-g := Evaluate(g, ev1);
-f := Evaluate(f, ev1);
+g := la*g;
+f := la^(-1)*f;
 
 h2 := MonomialCoefficient(h, y^2); h1 := MonomialCoefficient(h, y*z); h0 := MonomialCoefficient(h, z^2);
 g2 := MonomialCoefficient(g, y^2); g1 := MonomialCoefficient(g, y*z); g0 := MonomialCoefficient(g, z^2);
@@ -51,5 +49,4 @@ c := c1*z^2 + 2*c2*y*z + c3*y^2;
 p := Determinant(A)^2*b*(b^2 - a*c);
 
 print "";
-ev2 := [a11*y - a12*z, -a21*y + a22*z];
-print Evaluate(p0, ev2) eq p;
+print p0 eq p;
