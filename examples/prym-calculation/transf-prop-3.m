@@ -10,6 +10,7 @@ R<t> := PolynomialRing(K);
 h := h2*y^2 + h1*y*z + h0*z^2;
 g := g2*y^2 + g1*y*z + g0*z^2;
 f := y*z;
+h := -h;
 
 h2 := MonomialCoefficient(h, y^2); h1 := MonomialCoefficient(h, y*z); h0 := MonomialCoefficient(h, z^2);
 g2 := MonomialCoefficient(g, y^2); g1 := MonomialCoefficient(g, y*z); g0 := MonomialCoefficient(g, z^2);
