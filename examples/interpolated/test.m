@@ -38,10 +38,11 @@ while true do
         for res in ress do
             F3, c := Explode(res);
             assert #Factorization(GCD([ Integers() ! c : c in Coefficients(F3) ])) eq 0;
-            assert c in Integers();
             print "";
             print F3;
-            print Factorization(Integers() ! c);
+            if c in Integers() then
+                print Factorization(Integers() ! c);
+            end if;
         end for;
     else
         for res in ress do
