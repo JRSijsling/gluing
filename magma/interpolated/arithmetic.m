@@ -26,37 +26,38 @@ f2, h2 := HyperellipticPolynomials(X2);
 p1 := (4*f1 + h1^2)/4;
 p2 := (4*f2 + h2^2)/4;
 
-test, fabs := HasDegree2Factor(p2);
+test, pabs := HasDegree2Factor(p2);
 if not test then
     return [ ];
 end if;
 
-/* From now on fab is monic and frs, fss contain the relevant leading
+/* From now on pab is monic and prs, pss contain the relevant leading
  * coefficients */
 ress := [ ];
-for fab in fabs do
-    frs := f1;
-    fss := f2 div fab;
-    if Degree(fab) eq 1 then
-        if Degree(frs) eq 3 then
+for pab in pabs do
+    prs := p1;
+    pss := p2 div pab;
+
+    if Degree(pab) eq 1 then
+        if Degree(prs) eq 3 then
             //print "ABRs";
-            ress cat:= ApplyFormulaABRs(frs, fss, fab : Simplify := Simplify);
-        elif Degree(frs) eq 4 then
+            ress cat:= ApplyFormulaABRs(prs, pss, pab : Simplify := Simplify);
+        elif Degree(prs) eq 4 then
             //print "AB";
-            ress cat:= ApplyFormulaAB(frs, fss, fab : Simplify := Simplify);
+            ress cat:= ApplyFormulaAB(prs, pss, pab : Simplify := Simplify);
         end if;
     else
-        if Degree(frs) eq 3 and Degree(fss) eq 3 then
+        if Degree(prs) eq 3 and Degree(pss) eq 3 then
             //print "RsSs";
-            ress cat:= ApplyFormulaRsSs(frs, fss, fab : Simplify := Simplify);
-        elif Degree(frs) eq 3 and Degree(fss) eq 4 then
+            ress cat:= ApplyFormulaRsSs(prs, pss, pab : Simplify := Simplify);
+        elif Degree(prs) eq 3 and Degree(pss) eq 4 then
             //print "Rs";
-            ress cat:= ApplyFormulaRs(frs, fss, fab : Simplify := Simplify);
-        elif Degree(frs) eq 4 and Degree(fss) eq 3 then
+            ress cat:= ApplyFormulaRs(prs, pss, pab : Simplify := Simplify);
+        elif Degree(prs) eq 4 and Degree(pss) eq 3 then
             //print "Ss";
-            ress cat:= ApplyFormulaSs(frs, fss, fab : Simplify := Simplify);
-        elif Degree(frs) eq 4 and Degree(fss) eq 4 then
-            ress cat:= ApplyFormula(frs, fss, fab : Simplify := Simplify);
+            ress cat:= ApplyFormulaSs(prs, pss, pab : Simplify := Simplify);
+        elif Degree(prs) eq 4 and Degree(pss) eq 4 then
+            ress cat:= ApplyFormula(prs, pss, pab : Simplify := Simplify);
         end if;
     end if;
 end for;
