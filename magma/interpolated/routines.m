@@ -40,7 +40,21 @@ if Type(K) eq FldFin then
 end if;
 assert Type(K) eq FldRat or Type(K) eq FldNum;
 
-L := SplittingField(f);
+L := SplittingField(f); fac := 1;
+g := MinimalPolynomial(L.1, Rationals());
+coeffs := Coefficients(g);
+coeffs := coeffs[1..(#coeffs - 1)];
+coeffs := Reverse(coeffs);
+dens := [ Denominator(c) : c in coeffs ];
+ps := [ p : p in Set(&cat[ PrimeDivisors(den) : den in dens ]) ];
+for p in ps do
+    e := Max([ Ceiling(Valuation(dens[i], p) / i) : i in [1..#coeffs] ]);
+    fac *:= p^e;
+end for;
+R := Parent(g);
+g := Evaluate(g, R.1/fac);
+g /:= LeadingCoefficient(g);
+L := NumberField(g);
 Gp, Ga, Gphi := AutomorphismGroup(L, K);
 return L, [ Gphi(gen) : gen in Generators(Gp) ];
 
