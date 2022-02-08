@@ -41,7 +41,7 @@ end if;
 assert Type(K) eq FldRat or Type(K) eq FldNum;
 
 L := SplittingField(f); fac := 1;
-g := MinimalPolynomial(L.1, Rationals());
+g := MinimalPolynomial(L.1);
 coeffs := Coefficients(g);
 coeffs := coeffs[1..(#coeffs - 1)];
 coeffs := Reverse(coeffs);

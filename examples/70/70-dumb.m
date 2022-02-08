@@ -2,7 +2,7 @@
    Replace the package file galois.m by 70-galois.m */
 
 SetVerbose("QuarticIso", 1);
-SetVerbose("Reconstruction", 1);
+SetVerbose("QuarticRec", 1);
 SetVerbose("Gluing", 1);
 SetVerbose("CurveRec", 2);
 SetVerbose("EndoFind", 3);

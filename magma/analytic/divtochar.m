@@ -50,12 +50,13 @@ if #bps eq 3 then
     /* The four divisors in genus 1, with 1 corresponding to infty, and the
      * corresponding characteristics */
     divs := [ S4 ! 1, S4 ! (1, 2), S4 ! (1, 3), S4 ! (1, 4) ];
-    P2 := [ bps[1], 0 ];
-    char12 := SE_AbelJacobi(P2, [ 1 ], SE);
-    P3 := [ bps[2], 0 ];
-    char13 := SE_AbelJacobi(P3, [ 1 ], SE);
-    P4 := [ bps[3], 0 ];
-    char14 := SE_AbelJacobi(P4, [ 1 ], SE);
+    inf := SE ! [ 1 ] ;
+    P2 := SE ! [ bps[1], 0 ];
+    char12 := AbelJacobi(P2, inf : Reduction := "Real");
+    P3 := SE ! [ bps[2], 0 ];
+    char13 := AbelJacobi(P3, inf : Reduction := "Real");
+    P4 := SE ! [ bps[3], 0 ];
+    char14 := AbelJacobi(P4, inf : Reduction := "Real");
 
     /* Conversion to elements of FF2 and creation of map */
     chars := [ V1 ! 0 ] cat [ V1 ! [ Round(2*c) : c in Eltseq(char) ] : char in [ char12, char13, char14 ] ];
@@ -73,13 +74,13 @@ elif #bps eq 4 then
 
     /* The four divisors in genus 1 and the corresponding characteristics */
     divs := [ S4 ! 1, S4 ! (1, 2), S4 ! (1, 3), S4 ! (1, 4) ];
-    P1 := [ bps[1], 0 ];
-    P2 := [ bps[2], 0 ];
-    char12 := SE_AbelJacobi(P2, P1, SE);
-    P3 := [ bps[3], 0 ];
-    char13 := SE_AbelJacobi(P3, P1, SE);
-    P4 := [ bps[4], 0 ];
-    char14 := SE_AbelJacobi(P4, P1, SE);
+    P1 := SE ! [ bps[1], 0 ];
+    P2 := SE ! [ bps[2], 0 ];
+    char12 := AbelJacobi(P2, P1 : Reduction := "Real");
+    P3 := SE ! [ bps[3], 0 ];
+    char13 := AbelJacobi(P3, P1 : Reduction := "Real");
+    P4 := SE ! [ bps[4], 0 ];
+    char14 := AbelJacobi(P4, P1 : Reduction := "Real");
 
     /* Conversion to elements of FF2 and creation of map */
     chars := [ V1 ! 0 ] cat [ V1 ! [ Round(2*c) : c in Eltseq(char) ] : char in [ char12, char13, char14 ] ];
@@ -98,16 +99,17 @@ elif #bps eq 5 then
     /* The six fundamental divisors in genus 2, with 1 corresponding to infty,
      * and the corresponding characteristics */
     gendivs := [ S6 ! (1, 2), S6 ! (1, 3), S6 ! (1, 4), S6 ! (1, 5), S6 ! (1, 6) ];
-    P2 := [ bps[1], 0 ];
-    genchar12 := SE_AbelJacobi(P2, [ 1 ], SE);
-    P3 := [ bps[2], 0 ];
-    genchar13 := SE_AbelJacobi(P3, [ 1 ], SE);
-    P4 := [ bps[3], 0 ];
-    genchar14 := SE_AbelJacobi(P4, [ 1 ], SE);
-    P5 := [ bps[4], 0 ];
-    genchar15 := SE_AbelJacobi(P5, [ 1 ], SE);
-    P6 := [ bps[5], 0 ];
-    genchar16 := SE_AbelJacobi(P6, [ 1 ], SE);
+    inf := SE ! [1];
+    P2 := SE ! [ bps[1], 0 ];
+    genchar12 := AbelJacobi(P2, inf : Reduction := "Real");
+    P3 := SE ! [ bps[2], 0 ];
+    genchar13 := AbelJacobi(P3, inf : Reduction := "Real");
+    P4 := SE ! [ bps[3], 0 ];
+    genchar14 := AbelJacobi(P4, inf : Reduction := "Real");
+    P5 := SE ! [ bps[4], 0 ];
+    genchar15 := AbelJacobi(P5, inf : Reduction := "Real");
+    P6 := SE ! [ bps[5], 0 ];
+    genchar16 := AbelJacobi(P6, inf : Reduction := "Real");
     genchars := [ genchar12, genchar13, genchar14, genchar15, genchar16 ];
     genchars := [ V2 ! [ Round(2*c) : c in Eltseq(char) ] : char in genchars ];
 
@@ -144,15 +146,15 @@ elif #bps eq 6 then
     gendivs := [ S6 ! (1, 2), S6 ! (1, 3), S6 ! (1, 4), S6 ! (1, 5), S6 ! (1, 6) ];
     P1 := [ bps[1], 0 ];
     P2 := [ bps[2], 0 ];
-    genchar12 := SE_AbelJacobi(P2, P1, SE);
+    genchar12 := AbelJacobi(P2, P1 : Reduction := "Real");
     P3 := [ bps[3], 0 ];
-    genchar13 := SE_AbelJacobi(P3, P1, SE);
+    genchar13 := AbelJacobi(P3, P1 : Reduction := "Real");
     P4 := [ bps[4], 0 ];
-    genchar14 := SE_AbelJacobi(P4, P1, SE);
+    genchar14 := AbelJacobi(P4, P1 : Reduction := "Real");
     P5 := [ bps[5], 0 ];
-    genchar15 := SE_AbelJacobi(P5, P1, SE);
+    genchar15 := AbelJacobi(P5, P1 : Reduction := "Real");
     P6 := [ bps[6], 0 ];
-    genchar16 := SE_AbelJacobi(P6, P1, SE);
+    genchar16 := AbelJacobi(P6, P1 : Reduction := "Real");
     genchars := [ genchar12, genchar13, genchar14, genchar15, genchar16 ];
     genchars := [ V2 ! [ Round(2*c) : c in Eltseq(char) ] : char in genchars ];
 

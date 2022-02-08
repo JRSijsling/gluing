@@ -473,6 +473,8 @@ SE1 := X1`riesrf;
 SE2 := X2`riesrf;
 bps1 := SE1`BranchPoints;
 bps2 := SE2`BranchPoints;
+bps1 := [ bp1 : bp1 in bps1 | Type(bp1) ne Infty ];
+bps2 := [ bp2 : bp2 in bps2 | Type(bp2) ne Infty ];
 
 F := BaseRing(X1); R := PolynomialRing(F);
 L := SplittingFieldPari(g1*g2);
@@ -539,6 +541,9 @@ SE3 := X3`riesrf;
 bps1 := SE1`BranchPoints;
 bps2 := SE2`BranchPoints;
 bps3 := SE3`BranchPoints;
+bps1 := [ bp1 : bp1 in bps1 | Type(bp1) ne Infty ];
+bps2 := [ bp2 : bp2 in bps2 | Type(bp2) ne Infty ];
+bps3 := [ bp3 : bp3 in bps3 | Type(bp3) ne Infty ];
 
 F := BaseRing(X1); R := PolynomialRing(F);
 L := SplittingFieldPari(g1*g2*g3);

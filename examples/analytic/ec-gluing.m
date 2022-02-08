@@ -1,7 +1,7 @@
 /* Gluing of elliptic curves along 3-torsion */
 
 SetVerbose("QuarticIso", 1);
-SetVerbose("Reconstruction", 1);
+SetVerbose("QuarticRec", 1);
 SetVerbose("Gluing", 1);
 SetVerbose("CurveRec", 1);
 SetVerbose("EndoFind", 1);
