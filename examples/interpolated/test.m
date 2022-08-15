@@ -36,20 +36,22 @@ while true do
 
     if Type(F) eq FldRat then
         for res in ress do
-            F3, c := Explode(res);
+            F3, c, fab := Explode(res);
             assert #Factorization(GCD([ Integers() ! c : c in Coefficients(F3) ])) eq 0;
             print "";
             print F3;
             if c in Integers() then
                 print Factorization(Integers() ! c);
             end if;
+            print fab;
         end for;
     else
         for res in ress do
-            F3, c := Explode(res);
+            F3, c, fab := Explode(res);
             print "";
             print F3;
             print IsSquare(c);
+            print fab;
         end for;
     end if;
 end while;

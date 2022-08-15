@@ -129,7 +129,7 @@ for pair in pairs do
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c *]);
+        Append(~ress, [* F3, c, fab *]);
     end if;
 end for;
 return ress;
@@ -203,7 +203,7 @@ for pair in pairs do
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c *]);
+        Append(~ress, [* F3, c, fab *]);
     end if;
 end for;
 return ress;
@@ -273,7 +273,7 @@ for pair in pairs do
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c *]);
+        Append(~ress, [* F3, c, fab *]);
     end if;
 end for;
 return ress;
@@ -345,7 +345,7 @@ for pair in pairs do
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c *]);
+        Append(~ress, [* F3, c, fab *]);
     end if;
 end for;
 return ress;
@@ -417,7 +417,7 @@ for pair in pairs do
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c *]);
+        Append(~ress, [* F3, c, fab *]);
     end if;
 end for;
 return ress;
@@ -491,7 +491,7 @@ for pair in pairs do
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c *]);
+        Append(~ress, [* F3, c, fab *]);
     end if;
 end for;
 return ress;
