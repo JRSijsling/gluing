@@ -1,6 +1,6 @@
 /* Arithmetic reconstruction */
 
-F := FiniteField(3);
+F := FiniteField(17);
 //F := Rationals();
 R<x> := PolynomialRing(F);
 
@@ -36,22 +36,34 @@ while true do
 
     if Type(F) eq FldRat then
         for res in ress do
-            F3, c, fab := Explode(res);
+            F3, c, fab, pair := Explode(res);
             assert #Factorization(GCD([ Integers() ! c : c in Coefficients(F3) ])) eq 0;
             print "";
+            print "Glued curve";
             print F3;
             if c in Integers() then
+                print "";
+                print "Factorization of twisting scalar:";
                 print Factorization(Integers() ! c);
             end if;
+            print "Complementary quadratic factor:";
             print fab;
+            print "Torsion isomorphism:";
+            print pair;
         end for;
     else
         for res in ress do
-            F3, c, fab := Explode(res);
+            F3, c, fab, pair := Explode(res);
             print "";
+            print "Glued curve";
             print F3;
+            print "";
+            print "Is the twisting scalar a square?";
             print IsSquare(c);
+            print "Complementary quadratic factor:";
             print fab;
+            print "Torsion isomorphism:";
+            print pair;
         end for;
     end if;
 end while;

@@ -125,11 +125,11 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
-    res := [* F3, c *];
+    res := [* F3, c, fab, pair *];
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c, fab *]);
+        Append(~ress, res);
     end if;
 end for;
 return ress;
@@ -199,11 +199,11 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
-    res := [* F3, c *];
+    res := [* F3, c, fab, pair *];
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c, fab *]);
+        Append(~ress, res);
     end if;
 end for;
 return ress;
@@ -269,11 +269,11 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
-    res := [* F3, c *];
+    res := [* F3, c, fab, pair *];
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c, fab *]);
+        Append(~ress, res);
     end if;
 end for;
 return ress;
@@ -341,11 +341,11 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
-    res := [* F3, c *];
+    res := [* F3, c, fab, pair *];
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c, fab *]);
+        Append(~ress, res);
     end if;
 end for;
 return ress;
@@ -413,11 +413,11 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
-    res := [* F3, c *];
+    res := [* F3, c, fab, pair *];
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c, fab *]);
+        Append(~ress, res);
     end if;
 end for;
 return ress;
@@ -487,11 +487,11 @@ for pair in pairs do
             c /:= nu^2;
         end if;
     end if;
-    res := [* F3, c *];
+    res := [* F3, c, fab, pair *];
 
     test1 := CheckG1(res, pr); test2 := CheckG2(res, ps);
     if test1 and test2 then
-        Append(~ress, [* F3, c, fab *]);
+        Append(~ress, res);
     end if;
 end for;
 return ress;
